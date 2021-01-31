@@ -1,6 +1,5 @@
-# Erfanullah Arsala and Joel Terran
+# Erfanullah Arsala
 # 11/20/2019
-# Homework 3: Image Search
 # Abstract: A GUI that prompts a user to select a image filter option
 # and a search bar to enter information about
 # picture and once "Search" (thanks to cookie and Erik for helping me this part) button is clicked 
@@ -18,18 +17,6 @@ from PyQt5.QtCore import pyqtSlot, QUrl
 from PyQt5.QtGui import QColor
 from PIL import Image
 
-# im1 = Image.open("34694102243_3370955cf9_z.jpg")
-# im2 = Image.open("37198655640_b64940bd52_z.jpg")
-# im3 = Image.open("36909037971_884bd535b1_z.jpg")
-# im4 = Image.open("36604481574_c9f5817172_z.jpg")
-# im5 = Image.open("36885467710_124f3d1e5d_z.jpg")
-# im6 = Image.open("37246779151_f26641d17f_z.jpg")
-# im7 = Image.open("36523127054_763afc5ed0_z.jpg")
-# im8 = Image.open("35889114281_85553fed76_z.jpg")
-# im9 = Image.open("34944112220_de5c2684e7_z.jpg")
-# im10 = Image.open("36140096743_df8ef41874_z.jpg")
-
-# pics = [im1, im2, im3, im4, im5, im6, im7, im8, im9, im10]
 
 #dropdown part
 url_list = [
@@ -104,52 +91,6 @@ image_info = [
            "tags" : ["Los Angeles", "Hollywood", "California", "Volkswagen", "Beatle", "car"]
       }
 ]
-
-# #sepia function to apply sepia filter to image
-# def sepia(picture):
-#     def mypic(p):
-#         #increase red
-#         if p[0] < 63:
-#             r,g,b = int(p[0] * 1.5), p[1], int(p[2] * 0.9)
-#         elif p[0] > 62 and p[0] < 192:
-#             r,g,b = int(p[0] * 1.15), p[1], int(p[2] * 0.85)
-#         else:
-#             r = int(p[0] * 1.08)
-#             if r > 255:
-#                 r = 255
-#             g,b = p[1], int(p[2] * 0.5)
-#         return r, g, b
-
-#     new = map(mypic, picture.getdata())
-#     picture.putdata(list(new))
-#     picture.show()
-
-# #negative function to apply negative filter to image
-# def negative(picture):
-#     newList = []
-#     for p in picture.getdata():
-#         # reduce the green and blue channel by multiplying by .70 and getting integer value of that
-#         temp = (p[0], int(p[1] * .20), int(p[2]* .60))
-#         # overwrite list and add new values to the list
-#         newList.append(temp)
-#         # all data from picture is replaced with newList data
-#     picture.putdata(newList)
-#     # save the new picture with reduced green and blue channel values
-#     picture.show()
-
-# # greyscale function to apply greyscale filter to image
-# def greyscale(picture):
-#     image = Image.open(picture).convert('LA')
-#     image.show()
-
-# # thumbnail function to apply thumbnail filter to image
-# def thumbnail(picture):   
-#     image = Image.open(picture) 
-#     size = (100, 100)
-#     #call thumbnail to resize image 
-#     image.thumbnail(size) 
-#     image.show()
-
 
 class MainWindow(QWidget):
     def __init__(self):
